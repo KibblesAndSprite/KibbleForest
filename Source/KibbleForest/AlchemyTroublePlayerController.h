@@ -10,7 +10,7 @@
  * 
  */
 UCLASS()
-class /*KIBBLEFOREST_API*/ AAlchemyTroublePlayerController : public APlayerController
+class AAlchemyTroublePlayerController : public APlayerController
 {
 	GENERATED_BODY()
 
