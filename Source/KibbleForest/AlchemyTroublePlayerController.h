@@ -19,6 +19,7 @@ public:
 
 protected:
 	virtual void SetupInputComponent() override;
+	void GetThrowDirection();
 
 	void Move_XAxis(float AxisValue);
 	void Move_YAxis(float AxisValue);
