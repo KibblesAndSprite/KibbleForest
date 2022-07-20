@@ -213,7 +213,7 @@ void AAlchemyTroubleCharacter::Interact()
 	{
 		//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("ACTION"));
 		// Execute the interact event on the blueprint of the actor
-		//IInterface_Interactable::Execute_OnInteract(CurrentInteractiveActor);
+		IInterface_Interactable::Execute_OnInteract(CurrentInteractiveActor);
 	}
 }
 

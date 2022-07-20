@@ -79,7 +79,7 @@ void AAlchemyTroublePlayerController::Interact()
 	if (MyCharacter != nullptr)
 	{
 		//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("ACTION"));
-		//MyCharacter->Action();
+		MyCharacter->Interact();
 	}
 }
 
@@ -89,7 +89,17 @@ void AAlchemyTroublePlayerController::SwitchItem()
 	if (MyCharacter != nullptr)
 	{
 		//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("SWITCH"));
-		//MyCharacter->SwitchItem();
+		MyCharacter->SwitchItem();
+	}
+}
+
+void AAlchemyTroublePlayerController::FreeHands()
+{
+	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::White, TEXT("FREE"));
+	if (MyCharacter != nullptr)
+	{
+		//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("FREE"));
+		MyCharacter->FreeHands();
 	}
 }
 

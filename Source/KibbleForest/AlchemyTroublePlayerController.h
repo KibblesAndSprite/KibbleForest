@@ -37,4 +37,7 @@ protected:
 
 	UFUNCTION()
 	void SwitchItem();
+
+	UFUNCTION()
+	void FreeHands();
 };

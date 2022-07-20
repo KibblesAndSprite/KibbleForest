@@ -41,9 +41,6 @@ protected:
 	int32 ItemID;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item")
-	FName ItemName;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item")
 	bool bItemCollected;
 
 
