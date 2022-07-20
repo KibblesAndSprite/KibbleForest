@@ -9,6 +9,13 @@ AAlchemyTroublePlayerController::AAlchemyTroublePlayerController()
 	DefaultMouseCursor = EMouseCursor::Default;
 }
 
+void AAlchemyTroublePlayerController::BeginPlay()
+{
+	Super::BeginPlay();
+
+	MyCharacter = Cast<AAlchemyTroubleCharacter>(GetPawn());
+}
+
 void AAlchemyTroublePlayerController::SetupInputComponent()
 {
 	Super::SetupInputComponent();
@@ -17,6 +24,10 @@ void AAlchemyTroublePlayerController::SetupInputComponent()
 
 	InputComponent->BindAxis("MoveX", this, &AAlchemyTroublePlayerController::Move_XAxis);
 	InputComponent->BindAxis("MoveY", this, &AAlchemyTroublePlayerController::Move_YAxis);
+
+// ======================= INVENTORY =============================
+	InputComponent->BindAction("Interact", IE_Released, this, &AAlchemyTroublePlayerController::Interact);
+	InputComponent->BindAction("SwitchItem", IE_Released, this, &AAlchemyTroublePlayerController::SwitchItem);
 
 }
 
@@ -58,3 +69,27 @@ void AAlchemyTroublePlayerController::Move_YAxis(float AxisValue)
 		MyPawn->AddMovementInput(AffectedVector * 1, 1.f, false);
 	}
 }
+
+// ======================= INVENTORY =======================
+
+// input actions
+void AAlchemyTroublePlayerController::Interact()
+{
+	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::White, TEXT("ACTION"));
+	if (MyCharacter != nullptr)
+	{
+		//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("ACTION"));
+		//MyCharacter->Action();
+	}
+}
+
+void AAlchemyTroublePlayerController::SwitchItem()
+{
+	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::White, TEXT("SWITCH"));
+	if (MyCharacter != nullptr)
+	{
+		//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Green, TEXT("SWITCH"));
+		//MyCharacter->SwitchItem();
+	}
+}
+
