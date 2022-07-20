@@ -48,7 +48,6 @@ protected:
 	void OnItemCollected();
 
 public:
-
 	// Interaface
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Item Interact")
 	void OnItemInteract();
