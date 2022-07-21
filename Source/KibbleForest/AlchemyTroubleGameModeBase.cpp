@@ -23,3 +23,29 @@ AAlchemyTroubleGameModeBase::AAlchemyTroubleGameModeBase()
 		PlayerControllerClass = PlayerControllerBPClass.Class;
 	}
 }
+
+/** 
+* Checks through the database to check if ItemID is in the database and then returns the item.
+*/ 
+FItemStruct AAlchemyTroubleGameModeBase::FindItem_Implementation(int32 ItemID, bool& Success)
+{
+	Success = false;
+
+	FItemStruct Item;
+
+	if (ItemDatabase == nullptr)
+	{
+		return Item;
+	}
+
+	for (int i = 0; i < ItemDatabase->Data.Num(); i++)
+	{
+		if (ItemDatabase->Data[i].ItemID == ItemID)
+		{
+			Success = true;
+			return ItemDatabase->Data[i];
+		}
+	}
+
+	return Item;
+}

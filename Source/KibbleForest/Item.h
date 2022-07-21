@@ -7,7 +7,7 @@
 #include "Item.generated.h"
 
 UCLASS()
-class KIBBLEFOREST_API AItem : public AActor
+class KIBBLEFOREST_API AItem : public AActor 
 {
 	GENERATED_BODY()
 	
@@ -19,8 +19,12 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+
 
 };
