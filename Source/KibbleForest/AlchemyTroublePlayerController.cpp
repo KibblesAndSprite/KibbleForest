@@ -45,7 +45,24 @@ void AAlchemyTroublePlayerController::GetThrowDirection()
 		FMath::Clamp(HitResult.Location.Z - MyPawn->GetActorLocation().Z, -100.0f, 100.0f)
 	);
 	
+	ThrowItem( DirectionalVector + GetPawn()->GetActorLocation() );
 	//UE_LOG(LogTemp, Warning, TEXT("%f, %f, %f"), DirectionalVector.X, DirectionalVector.Y, DirectionalVector.Z);
+}
+
+void AAlchemyTroublePlayerController::ThrowItem(FVector SpawnPoint) 
+{
+	FActorSpawnParameters SpawnParams;
+
+	AUsableItem* ActorRef = GetWorld()->SpawnActor<AUsableItem>(UsableItem, SpawnPoint, GetPawn()->GetActorRotation(), SpawnParams);
+
+	if (ActorRef) {
+		UE_LOG(LogTemp, Warning, TEXT("Actor Spawned"));
+	}
+		
+	else
+		UE_LOG(LogTemp, Warning, TEXT("Actor Not Spawned"));
+
+
 }
 
 void AAlchemyTroublePlayerController::Move_XAxis(float AxisValue)

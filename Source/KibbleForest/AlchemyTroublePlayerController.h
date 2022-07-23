@@ -5,6 +5,8 @@
 #include "CoreMinimal.h"
 #include "GameFramework/PlayerController.h"
 #include "AlchemyTroubleCharacter.h"
+#include <KibbleForest/UsableItem.h>
+
 #include "AlchemyTroublePlayerController.generated.h"
 
 /**
@@ -22,9 +24,14 @@ protected:
 	virtual void BeginPlay() override; // added for inventory
 	virtual void SetupInputComponent() override;
 	void GetThrowDirection();
-
+	void ThrowItem(FVector SpawnPoint);
+		
 	void Move_XAxis(float AxisValue);
 	void Move_YAxis(float AxisValue);
+
+private:
+	UPROPERTY(EditDefaultsOnly)
+		TSubclassOf<AUsableItem> UsableItem;
 
 
 // ======================= INVENTORY =======================

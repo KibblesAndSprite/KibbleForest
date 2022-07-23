@@ -18,6 +18,10 @@ void AItem::BeginPlay()
 	
 }
 
+void AItem::UseItem()
+{
+}
+
 // Called every frame
 void AItem::Tick(float DeltaTime)
 {
